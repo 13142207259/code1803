@@ -4,7 +4,7 @@
 
 ## GIT
 
-克隆一个新的仓库到当前目录222
+克隆一个新的仓库到当前目录
 
 ```
 $ git clone git@gitee.com:qq71256459/code_1803b.git
