@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+
+    </style>
+</head>
+<body>
+<script>
+    function House(){
+        this.addr = "珠穆朗玛峰峰顶666号";
+        this.zhuangxiu=function (visitor){
+            visitor.doThing("钥匙",this.addr);
+        }
+    }
+    function visitor(type){
+        this.type=type;
+        this.doThing= function (a,addr) {
+    console.log(`我是${this.type}工人,我来到了${addr}我拿到了${a}我进行装修`);
+        }
+    }
+ var house=new House();
+    var mug=new visitor("木工");
+     mug.doThing= function (a,addr) {
+    console.log(`我是${this.type}工人,我开着我的F22-猛禽来到了${addr}我拿到了${a}和我的锯子来进行装修`);
+        };
+    house.zhuangxiu(new visitor("水电工"));
+    house.zhuangxiu(mug);
+    house.zhuangxiu(new visitor("油漆工"));
+    house.zhuangxiu(new visitor("泥工"));
+
+
+
+
+
+
+    LaoZhang={
+        name:"老张",
+        kaiche:function(car,target){
+    car.go(target)
+        }
+    }
+    DongBei={
+name:"中国的东北地区"
+    }
+    YiYuan={
+   FengZhen:function(Ren){
+console.log(`这里是医院，给${Ren.name}缝了5针，治好了`)
+   }
+    }
+    DongBeiRen={
+        sendToYiYuan:function(Ren){
+   console.log(`我是一个东北人，我送${Ren.name}去医院`)
+             return Ren;
+   }
+    }
+    Car={
+     go: function (target) {
+         console.log(`我是一辆迈凯伦，我现在要去${target.name},发生了车祸，撞了一辆兰博基尼`)
+     }
+    }
+    LaoZhang.kaiche(Car,DongBei);
+     var ren = DongBeiRen.sendToYiYuan(LaoZhang);
+    YiYuan.FengZhen(ren);
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

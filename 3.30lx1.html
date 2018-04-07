@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+
+    </style>
+</head>
+<body>
+<script>
+function House(){
+    this.zhuangxiu=function(visitor){
+        visitor("钥匙");
+
+    }
+    function Visitor(type) {
+        this.type = type;
+        this.doThing = function (a) {
+            consolt.log(`
+            我是${this.type}工人,我拿到了${a}我进行装修
+            `);
+        }
+    }
+
+var house=new House();
+
+    house.zhuangxiu(new Visitor("水电工"));
+    house.zhuangxiu(new Visitor("木工"));
+    house.zhuangxiu(new Visitor("油漆工"));
+    house.zhuangxiu(new Visitor("泥工"));}
+
+
+
+
+
+
+    LaoZhang={
+        name:"老张",
+        kaiche:function(car,traget){
+      car.go(traget);
+        }
+    }
+    DongBei={
+        name:"中国的东北地区"
+    }
+    YiYuan={
+        fengzhen:function (Ren){
+console.log(`
+这里是一家良心的医院，我们包治百病，给${Ren.name}缝了5针，治好了`);
+}
+    }
+    DongBeiRen={
+        sendToYiYuan:function(Ren){
+console.log(`
+我是一个东北人，东北人都是活雷锋，我送${Ren.name}去医院`);
+            return Ren;
+            }
+        }
+
+    car={
+     go:function(target){
+         console.log(`
+         我是一辆劳斯莱斯-幻影,我现在要去${target.name},发生了车祸`);
+     }
+    }
+LaoZhang.kaiche(car,DongBei);
+    var ren =   DongBeiRen.sendToYiYuan(LaoZhang);
+    YiYuan.fengzhen(ren);
+
+</script>
+</body>
+</html>

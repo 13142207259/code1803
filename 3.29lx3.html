@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+
+    </style>
+</head>
+<body>
+<script>
+
+    var aaa= function(){
+        console.log("aaa");
+
+    }
+    function bbb(){
+        console.log("bbb");
+    }
+
+var p={age:20}
+    var Actor= function (name) {
+        this.name = name ;
+
+        this.show= function () {
+           console.log ("我是"+ this.name);
+        }
+    }
+    var liudehua = new Actor('刘德华');
+    liudehua.show();
+    var liangchaowei = new Actor('梁朝伟');
+    liangchaowei.show();
+    var name="周杰伦";
+    var ss = liangchaowei.show.bind(window);
+     //方法.bind(this指向的对象)   绑定
+
+    function max(a,b){
+        return a>b?a:b;
+
+    }
+    function min(){
+var arr=Array.prototype.slice.apply(arguments,[0]);
+      console.log(arr); }
+
+
+
+</script>
+</body>
+</html>

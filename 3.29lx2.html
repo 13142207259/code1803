@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+
+    </style>
+</head>
+<body>
+<script>
+    var a=10;
+    var b=a;
+    b=20;
+    console.log(a);
+    var p={
+        age:20
+    }
+    var c=p;
+    c.age=30;
+    console.log(p.age);
+    function temp(){
+        alert(111);
+    }
+    var d=temp;
+    d();  // 函数可以被赋值给一个变量
+     function add(a,b){
+         alert (a+b);
+     }
+    add(100,88);
+    var e=200;
+function  suibian(a,b,cb){
+    console.log(a,b,cb);
+
+}
+    suibian(87,13,add);
+
+
+
+</script>
+</body>
+</html>
