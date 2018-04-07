@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #root {
+            display: flex; /*采用flex布局*/
+            width: 1000px;
+            flex-wrap: wrap; /*flex布局换行*/
+
+        }
+
+        #head {
+            height: 100px;
+        }
+
+        #middle {
+            display: flex;
+        }
+
+        #foot {
+            height: 100px;
+        }
+
+        #left {
+            width: 300px;
+        }
+
+        #right {
+            width: 700px;
+
+        }
+        #tbl{
+            height:400px;
+            width:500px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="root">
+    <div id="head"></div>   <!--head-end-->
+    <div id="middle">
+        <div id="left"></div>    <!--left-end-->
+        <div id="right">
+            <table id="tbl"></table>
+        </div>  <!-- right-end-->
+    </div>
+    <div id="foot"></div>
+</div>    <!--root-end-->
+
+<script>
+    var persons=[
+        {name:"张三",age:33,sex:"男"},
+        {name:"老王",age:45,sex:"男"},
+        {name:"彭桂香",age:19,sex:"女"},
+        {name:"李卫红 ",age:60,sex:"女"},
+        {name:"王二狗",age:5,sex:"男"},
+
+    ];
+    function showTable(){
+        var str="";
+    for(var i in persons){
+    str+=`<tr>
+    <td>${persons[i].name}</td>
+    <td>${persons[i].age}</td>
+    <td>${persons[i].sex}</td>
+    <td><a href="javascript:del(${i})">删除</a>|<a href="javascript:update(${i})">修改</a></td>
+
+    </tr>
+    `;
+}
+document.querySelector("#tbl").innerHTML=str;
+    }
+showTable();
+    function del(line){
+        delete persons[line];
+        showTable();
+
+    }
+    function update(line){
+
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<input type="text" oninput="haha(this)">   <!-- oninput:输入就触发-->
+<h1 id="alert"></h1>                      <!-- onchange:改变完，失去焦点后才触发-->
+<script>
+    var hh=document.getElementById('alert');
+    function haha(a){
+        hh.innerHTML=  a.value.toUpperCase();
+            }
+
+   var a="this is my info";
+    console.log(a);
+    a=a.split("");
+    var b="";
+
+    for(i=0;i<15;i++) {
+        b += a.pop(i);
+    }
+   console.log(b);
+
+
+
+
+
+var users=[
+    {name:"张三",age:18,sex:"男"},
+    {name:"张卫红",age:58,sex:"女"},
+    {name:"张二狗",age:22,sex:"男"},
+    {name:"张春华",age:35,sex:"女"},
+    {name:"张小明",age:12,sex:"男"},
+    {name:"张新发",age:24,sex:"男"}];
+
+         /* 过滤，回调返回false则滤掉*/
+   users.filter(function(a,b,c){
+       return a.age<50&& a.age>18;
+       /*50岁以上的人去掉，18岁以下的人去掉*/
+   });
+
+    users.sort(function(a,b){
+        var r=b.age-a.age;
+        if(r==0){
+            return b.sex.charCodeAt(0)-a.sex.charCodeAt(0);
+
+        }
+        return r;
+    });
+
+ var tab_str=  users.map(function(a){
+    return`<tr>
+    <td>${a.name}</td>
+    <td>${a.age}</td>
+    <td>${a.sex}</td></tr>`;
+
+}).reduce(function(a,b){
+    return a+b;
+});
+    var tbl=document.querySelector("#tbl");
+    tbl.innerHTML=tab_str;
+
+/*map=> 每一次回调返回的值组成新的数组，新数组的长度和原数组长度一样
+filter=>回调返回布尔值，turn则留着，flase则去掉，组成新数组
+some=>回调返回布尔值，只要有一个返回true，则最终结果为true
+every=>回调返回布尔值，所有返回ture，则最终结果为true
+reduce=>用来做统计，将每次回调的结果注入到第一个参数中
+forEach=>普通的迭代*/
+
+
+
+function suibian(a,b,cb){
+    function dapaidang(aaa){
+        return aaa;
+    }
+    function  haha(cb){
+        return cb;
+
+    }
+    haha(dapaidang(cb))(a,b);
+
+}suibian(87,13,add);
+
+    //栈
+    /*arr.pop();   从数组的后边弹出
+    arr.push();  从后面加入数组*/
+    //队列
+    /*arr.push();
+    arr.shift();*/
+</script>
+</body>
+</html>

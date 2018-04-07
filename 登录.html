@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-image: url(dp.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    h1{text-align: center;
+        color: red;
+        padding-top:100px;
+    }
+    #pb{
+        padding-left:550px;
+    }
+    #dl{
+        padding-left:100px;
+    }
+    #xg{
+        padding-left:75px;
+    }
+</style>
+<body>
+<h1>登录界面</h1>
+<form id="pb">
+    用户名:<input type="text" name="uName"><br><br>
+    密  码：<input type="password" name="pass"><br><br>
+    <div id="dl"><input type="button" value="登录" onclick="login()"></div><br>
+    <div id="xg"><input type="button" value="修改个人资料" ></div>
+</form>
+<script>
+    function login(){
+        var ff=document.forms[0];
+        var uname=ff.uName.value;
+        var pass=ff.pass.value;
+
+        var users=localStorage.getItem('users');
+        if(!users){
+            alert("请先注册");
+            return ;
+        }
+        users=JSON.parse(users);
+        if (!Array.isArray(users)){
+            localStorage.clear();
+            alert("登录失败！请重新注册");
+            return ;
+        }
+         var has= users.some(function(item){
+            return item.name==uname&&item.pass==pass;
+
+        });
+        if(has){
+            alert("登陆成功");
+        }else{
+            alert("登录失败");
+        }
+    }
+</script>
+</body>
+</html>
