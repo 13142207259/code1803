@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        #root {
+            display: flex; /*采用flex布局*/
+            width: 1000px;
+            flex-wrap: wrap; /*flex布局换行*/
+
+        }
+
+        #head {
+            height: 100px;
+        }
+
+        #middle {
+            display: flex;
+        }
+
+        #foot {
+            height: 100px;
+        }
+
+        #left {
+            width: 300px;
+        }
+
+        #right {
+            width: 700px;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="root">
+    <div id="head"></div>   <!--head-end-->
+    <div id="middle">
+        <div id="left"></div>    <!--left-end-->
+        <div id="right">
+
+            <table id="tbl"></table>
+        </div>  <!-- right-end-->
+    </div>
+    <div id="foot"></div>
+</div>    <!--root-end-->
+<script>
+    var persons=[
+    {name:'张三',age:33,sex:'男'},
+    {name:'老王',age:45,sex:'男'},
+    {name:'彭桂香',age:19,sex:'女'},
+    {name:'李卫红',age:60,sex:'女'},
+    {name:'王二狗',age:5,sex:'男'},
+    ];
+    function  showTable(){
+        var str="";
+    //for(var i=0;i<persons.length;i++){
+for (var i in persons)
+        str+=`<tr>
+        for (var j in persons[i]){
+        str+="<td>"+persons[i][j]+"</td>"
+        }
+
+
+function max (a,b) {
+return a>b ?a:b;
+
+}
+function f(x){
+return 10*x+22;
+}
+
+var xiaoMianGuan={
+name:"老官面"，
+address:"银盆南路88号"，
+phone:"073131313131",
+paoMian:function(a){
+var caiDan=["红烧牛肉面","牛杂粉","刀削面"];
+return caiDan[a];
+}
+
+}
+var paoMian=xiaoMianGuan.paoMian(1);
+console.log(mian);
+
+var oneDayThing=[function(){
+
+},function(){
+
+},function(){
+
+}]
+
+
+for(var i in oneDayThing){
+oneDayThing[i]();
+}
+var shengXiao =['鼠'牛'虎'兔'龙'蛇'马'羊'猴'鸡'狗'猪'];
+</script>
+</body>
+</html>
